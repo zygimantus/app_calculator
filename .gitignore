@@ -50,3 +50,5 @@ thumb
 sketch
 
 # End of https://www.gitignore.io/api/react
+
+frontend/node/
