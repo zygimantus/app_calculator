@@ -1,4 +1,4 @@
-package com.zygimantus.app_calculator.model;
+package com.zygimantus.app.calculator.model;
 
 public class Message {
 
