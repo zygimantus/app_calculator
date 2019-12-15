@@ -177,19 +177,22 @@ export default class App extends React.Component {
     const finalFormula = this.state.formula.concat(this.state.input);
     const result = Calculator.evaluate(finalFormula);
 
-    if (!Number.isNaN(result)) {
-      const newHistoryItem = {
-        formula: finalFormula,
-        result: result
-      }
+    this.getCalculationResult(result)
+      .then(result => {
+        if (!Number.isNaN(result)) {
+          const newHistoryItem = {
+            formula: finalFormula,
+            result: result
+          }
 
-      this.setState({
-        input: result + "",
-        formula: [],
-        history: [].concat(newHistoryItem, this.state.history),
-        afterCalculation: true
+          this.setState({
+            input: result + "",
+            formula: [],
+            history: [].concat(newHistoryItem, this.state.history),
+            afterCalculation: true
+          });
+        }
       });
-    }
   }
 
   onHistory() {
@@ -261,5 +264,13 @@ export default class App extends React.Component {
         />
       </div>
     )
+  }
+
+  async getCalculationResult(array) {
+    let operation = array[0], num1 = array[1], num2 = array[2];
+    let response = await fetch(`/${operation}/${num1}/${num2}`);
+    let body = await response.json();
+  
+    return body.result;
   }
 }
