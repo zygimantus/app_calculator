@@ -10,7 +10,7 @@
 	<groupId>com.zygimantus</groupId>
 	<artifactId>app_calculator</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
-	<name>demo</name>
+	<name>app_calculator</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
