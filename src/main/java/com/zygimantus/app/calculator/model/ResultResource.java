@@ -1,4 +1,4 @@
-package com.zygimantus.app.calculator;
+package com.zygimantus.app.calculator.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

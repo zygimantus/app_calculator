@@ -1,4 +1,4 @@
-package com.zygimantus.app.calculator;
+package com.zygimantus.app.calculator.exception;
 
 public class WrongNumberOfArgumentsException extends RuntimeException {
 

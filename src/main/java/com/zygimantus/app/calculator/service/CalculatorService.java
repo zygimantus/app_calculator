@@ -5,8 +5,8 @@ import java.util.Arrays;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import com.zygimantus.app.calculator.DivisionByZeroException;
-import com.zygimantus.app.calculator.WrongNumberOfArgumentsException;
+import com.zygimantus.app.calculator.exception.DivisionByZeroException;
+import com.zygimantus.app.calculator.exception.WrongNumberOfArgumentsException;
 
 @Service
 public class CalculatorService {

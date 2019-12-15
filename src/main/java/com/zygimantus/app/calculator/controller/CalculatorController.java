@@ -1,5 +1,7 @@
-package com.zygimantus.app.calculator;
+package com.zygimantus.app.calculator.controller;
 
+import com.zygimantus.app.calculator.exception.DivisionByZeroException;
+import com.zygimantus.app.calculator.model.ResultResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
