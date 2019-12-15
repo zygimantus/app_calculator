@@ -1,7 +1,5 @@
 import React from 'react';
 import Buttons from './Buttons';
-import History from './History';
-import FolkMe from './Folkme';
 import DisplayToolbar from './DisplayToolbar';
 import * as Calculator from '../calculator-core';
 import './App.css';
@@ -12,9 +10,7 @@ export default class App extends React.Component {
 
     this.state = {
       formula: [],
-      history: [],
       input: '0',
-      isShowHistory: false,
       afterCalculation: false
     }
 
@@ -25,9 +21,6 @@ export default class App extends React.Component {
     this.onDecimal = this.onDecimal.bind(this);
     this.onParenthesis = this.onParenthesis.bind(this);
     this.onBackspace = this.onBackspace.bind(this);
-    this.onHistory = this.onHistory.bind(this);
-    this.onHistoryItemClicked = this.onHistoryItemClicked.bind(this);
-    this.onClearHistory = this.onClearHistory.bind(this);
   }
 
   onDigit({ target }) {
@@ -180,47 +173,14 @@ export default class App extends React.Component {
     this.getCalculationResult(result)
       .then(result => {
         if (!Number.isNaN(result)) {
-          const newHistoryItem = {
-            formula: finalFormula,
-            result: result
-          }
 
           this.setState({
             input: result + "",
             formula: [],
-            history: [].concat(newHistoryItem, this.state.history),
             afterCalculation: true
           });
         }
       });
-  }
-
-  onHistory() {
-    this.setState({
-      isShowHistory: !this.state.isShowHistory
-    });
-  }
-
-  onClearHistory() {
-    this.setState({
-      history: []
-    });
-  }
-
-  onHistoryItemClicked({ target }) {
-    const number = target.getAttribute("value");
-    const input = this.state.input;
-
-    if (Calculator.isNumber(input)) {
-      this.setState({
-        input: number
-      });
-    } else {
-      this.setState({
-        input: number,
-        formula: this.state.formula.concat(input)
-      });
-    }
   }
 
   render() {
@@ -231,9 +191,6 @@ export default class App extends React.Component {
             formula={this.state.formula}
             input={this.state.input}
             onBackspace={this.onBackspace}
-            githubURL={this.props.githubURL}
-            onHistory={this.onHistory}
-            isShowHistory={this.state.isShowHistory}
           />
 
           <Buttons
@@ -244,24 +201,8 @@ export default class App extends React.Component {
             onOperator={this.onOperator}
             onParenthesis={this.onParenthesis}
           />
-
-          <History
-            isShowHistory={this.state.isShowHistory}
-            history={this.state.history}
-            onHistoryItemClicked={this.onHistoryItemClicked}
-            onEqual={this.onEqual}
-            onClearHistory={this.onClearHistory}
-          />
         </div>
 
-        <FolkMe
-          targetURL={this.props.githubURL}
-          color="#fff"
-          backgroundColor="#3da4ab"
-          position="right"
-          size="120px"
-          ariaLabel="View source on Github"
-        />
       </div>
     )
   }

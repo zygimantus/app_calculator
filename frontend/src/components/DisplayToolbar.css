@@ -56,28 +56,7 @@
   color: #0e9aa7;
 }
 
-#view-history {
-  -webkit-transition: all 0.35s ease-out;
-  -moz-transition: all 0.35s ease-out;
-  transition: all 0.35s ease-out;
-}
-
 #backspace {
   margin-left: 30px;
   font-size: 1.5rem;
-}
-
-#view-github {
-  color: #3da4ab;
-  font-size: 1.5rem;
-}
-
-#view-github:hover {
-  color: #0e9aa7;
-}
-
-@media (min-width: 768px) {
-  #view-github {
-    display: none;
-  }
 }
