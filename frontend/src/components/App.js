@@ -268,7 +268,7 @@ export default class App extends React.Component {
 
   async getCalculationResult(array) {
     let operation = array[0], num1 = array[1], num2 = array[2];
-    let response = await fetch(`/${operation}/${num1}/${num2}`);
+    let response = await fetch(`/${operation}/${num2}/${num1}`);
     let body = await response.json();
   
     return body.result;

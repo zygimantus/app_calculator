@@ -80,12 +80,15 @@ export function evaluatePostfix(arrPostfix) {
           break;
         case '-':
           result = num2 - num1;
+          operation = 'subtraction';
           break;
         case '*':
           result = num2 * num1;
+          operation = 'multiplication';
           break;
         case '/':
           result = num2 / num1;
+          operation = 'division';
           break;
         case '%':
           result = num2 % num1;
