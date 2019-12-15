@@ -1,6 +1,6 @@
-package com.zygimantus.app_calculator;
+package com.zygimantus.app.calculator;
 
-import com.zygimantus.app_calculator.model.Message;
+import com.zygimantus.app.calculator.model.Message;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.zygimantus.app_calculator;
+package com.zygimantus.app.calculator;
 
 public class DivisionByZeroException extends RuntimeException {
 
