@@ -92,6 +92,7 @@ export function evaluatePostfix(arrPostfix) {
           break;
         case '%':
           result = num2 % num1;
+          operation = 'modulo';
           break;
         default:
           console.log('Something else!!!');

@@ -100,6 +100,17 @@ public class CalculatorController {
         return resultResource;
     }
 
+    @RequestMapping("/modulo/{a}/{b}")
+    public ResultResource getModulo(@PathVariable(name = "a") Integer a, @PathVariable(name = "b") Integer b) {
+
+        Integer result = calculatorService.divide(a, b);
+
+        ResultResource resultResource = new ResultResource(result);
+        resultResource.add(linkTo(methodOn(CalculatorController.class).getModulo(a, b)).withSelfRel());
+
+        return resultResource;
+    }
+
     @ExceptionHandler(DivisionByZeroException.class)
     protected ResponseEntity<Object> handleEntityNotFound(DivisionByZeroException ex) {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

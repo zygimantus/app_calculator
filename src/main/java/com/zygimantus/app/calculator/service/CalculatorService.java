@@ -51,6 +51,16 @@ public class CalculatorService {
         return a / b;
     }
 
+    @Cacheable("modulo")
+    public Integer modulo(Integer a, Integer b) {
+
+        if (0 == b) {
+            throw new DivisionByZeroException();
+        }
+
+        return a % b;
+    }
+
     private void validate(Integer... numbers) {
         if (numbers.length < 2) {
             throw new WrongNumberOfArgumentsException();
