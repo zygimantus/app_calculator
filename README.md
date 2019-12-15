@@ -8,4 +8,4 @@ TODO: Write a project description
 
 ## License
 
-TODO: Write license
+MIT License
