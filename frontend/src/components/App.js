@@ -24,7 +24,7 @@ export default class App extends React.Component {
   }
 
   onDigit({ target }) {
-    const digit = target.innerText;
+    const digit = target.innerText || target.textContent;
     const input = this.state.input;
 
     if (this.state.afterCalculation) {
