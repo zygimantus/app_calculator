@@ -16,7 +16,7 @@ export default class DisplayToolbar extends React.Component {
       <div className="display-toolbar">
         <form className="display">
           <textarea className="display-formula" onChange={this.onTextareaChanged} value={this.props.formula.join("")} ></textarea>
-          <textarea className="display-input" id="display" rows="1" onChange={this.onTextareaChanged} value={this.props.input}></textarea>
+          <textarea className="display-input" id="display" data-testid="display" rows="1" onChange={this.onTextareaChanged} value={this.props.input}></textarea>
         </form>
         <div className="toolbar">
           <div>

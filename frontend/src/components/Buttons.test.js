@@ -15,8 +15,8 @@ describe("Calculator buttons", () => {
     it(`renders ${sButton} button`, () => {
       const { getByText } = render(<Buttons />);
       const regex = new RegExp(escapeStringRegexp(sButton));
-      const linkElement = getByText(regex);
-      expect(linkElement).toBeInTheDocument();
+      const button = getByText(regex);
+      expect(button).toBeInTheDocument();
     });
   });
 
